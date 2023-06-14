@@ -1,0 +1,21 @@
+<div class='login'>
+  <div>
+    <%= link_to bills_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p>PROGRAMS</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div id="programs">
+  <% @programs.each do |program| %>
+    <%= link_to program do %>  
+      <%= render program %>
+    <% end %>
+  <% end %>
+</div>
+
+<%# <%= link_to "New program", new_program_path  %>
