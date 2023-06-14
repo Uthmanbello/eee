@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BudgetApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Lobster&display=swap');
+    </style>
+    <script src="https://kit.fontawesome.com/dcdd89c74c.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>
