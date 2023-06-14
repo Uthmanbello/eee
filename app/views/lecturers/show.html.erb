@@ -1,10 +1,43 @@
-<p style="color: green"><%= notice %></p>
+<div class='login'>
+  <div>
+    <%= link_to lecturers_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p class='caps'><%= @lecturer.appointment %></p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
 
-<%= render @lecturer %>
+<div class= 'bills home text2'>
+  <div class='img-container'>
+    <%= image_tag "#{@lecturer.pic}", alt: "#{@lecturer.name}", class: 'home-icon' %>
+  </div>
+  <div>
+    <h1 class='grey'><%= @lecturer.name %></h1>
+    <p><span class='grey'>Degrees:</span> <%= @lecturer.degrees %></p>
+    <p><span class='grey'>Appointment:</span> <%= @lecturer.appointment %></p>
+    <p><span class='grey'>Office(s):</span> <%= @lecturer.office %><p>
+    <p><span class='grey'>DOFA:</span> <%= @lecturer.doa %><p>
+  </div>
+</div>
 
-<div>
-  <%= link_to "Edit this lecturer", edit_lecturer_path(@lecturer) %> |
-  <%= link_to "Back to lecturers", lecturers_path %>
 
-  <%= button_to "Destroy this lecturer", @lecturer, method: :delete %>
+<div class='edit-del'>
+    <%= link_to edit_lecturer_path(@lecturer) do %>
+      <div class='edit-btn'>
+        <div class='btn-border'>
+          EDIT
+        </div>
+      </div>
+    <% end %>
+  
+    <%= button_to @lecturer, class: 'del-btn', method: :delete do %>
+      <div class='delete-btn'>
+        <div class='btn-border'>
+          DELETE
+        </div>
+      </div>
+    <% end %>
 </div>

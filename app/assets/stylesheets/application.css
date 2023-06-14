@@ -64,6 +64,10 @@ a {
   color: #e3e7eb;
 }
 
+.caps {
+  text-transform: uppercase;
+}
+
 .splash {
   display: flex;
   flex-direction: column;
@@ -190,6 +194,11 @@ a {
   flex-direction: column;
 }
 
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
 .home-icon {
   width: 90%;
 }
@@ -305,6 +314,55 @@ a {
 
 .items-heading {
   display: flex;
+}
+
+.edit-btn {
+  width: 30vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  background-color: #5fb523;
+  color: #fff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-btn a {
+  color: #fff;
+}
+
+.btn-border {
+  border: 1px solid #fff;
+  padding: 10px;
+  width: 26vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn {
+  width: 30vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border: none;
+  background-color: red;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.del-btn {
+  border: none;
+  background: none;
+}
+
+.edit-del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20vw
 }
 
 .d-none {
