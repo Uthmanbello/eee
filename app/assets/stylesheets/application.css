@@ -175,6 +175,10 @@ a {
   padding: 15px;
 }
 
+.small-icon {
+  width: 30px;
+}
+
 .icon {
   width: 23vw;
   height: 12vh;
@@ -183,7 +187,7 @@ a {
 
 .bills {
   display: flex;
-  justify-content: space-between;
+  gap: 30px;
   background-color: white;
   border: 1px solid #e0e6eb;
   padding: 15px 15px 0 15px;
