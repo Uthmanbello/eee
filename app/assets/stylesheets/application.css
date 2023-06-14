@@ -320,7 +320,7 @@ a {
   width: 30vw;
   padding-top: 2vw;
   padding-bottom: 2vw;
-  background-color: #5fb523;
+  background-color: #3778c2;
   color: #fff;
   border-radius: 4px;
   display: flex;
@@ -362,7 +362,8 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20vw
+  gap: 20vw;
+  margin-bottom: 2vh;
 }
 
 .d-none {
