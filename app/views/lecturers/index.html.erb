@@ -1,14 +1,27 @@
-<p style="color: green"><%= notice %></p>
+<div class='login'>
+  <div>
+    <%= link_to bills_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p>LECTURERS</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
 
-<h1>Lecturers</h1>
 
-<div id="lecturers">
   <% @lecturers.each do |lecturer| %>
-    <%= render lecturer %>
-    <p>
-      <%= link_to "Show this lecturer", lecturer %>
-    </p>
+    <%= link_to lecturer do %>
+      <div class= 'bills'>
+        <%= render lecturer %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 
-<%= link_to "New lecturer", new_lecturer_path %>
+<div class= 'empty'></div>
+
+<div class= 'big'>
+  <%= link_to "ADD", new_lecturer_path, class: 'white small' %>
+</div>
