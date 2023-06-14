@@ -8,6 +8,7 @@ class ProgramsController < ApplicationController
 
   # GET /programs/1 or /programs/1.json
   def show
+    @options = Option.where(program_id: params[:id])
   end
 
   # GET /programs/new

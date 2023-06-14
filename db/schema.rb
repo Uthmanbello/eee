@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_14_202509) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_14_223450) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,6 +46,15 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_202509) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "options", force: :cascade do |t|
+    t.string "name"
+    t.bigint "program_id", null: false
+    t.string "option_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_id"], name: "index_options_on_program_id"
+  end
+
   create_table "programs", force: :cascade do |t|
     t.string "name"
     t.string "image"
@@ -70,4 +79,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_14_202509) do
   add_foreign_key "bills", "users", column: "author_id"
   add_foreign_key "items", "bills"
   add_foreign_key "items", "users", column: "author_id"
+  add_foreign_key "options", "programs"
 end

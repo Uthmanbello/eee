@@ -3,9 +3,25 @@
 <%= render @program %>
 
 <div>
-  <%= link_to "Edit this program", edit_program_path(@program) %> |
+  <%# <%= link_to "Edit this program", edit_program_path(@program) %>
   <%= link_to "Back to programs", programs_path %>
-  <%= link_to "New program", new_program_path %>
+  <%# <%= link_to "New program", new_program_path  %>
 
-  <%= button_to "Destroy this program", @program, method: :delete %>
+  <%# <%= button_to "Destroy this program", @program, method: :delete  %>
 </div>
+
+<p style="color: green"><%= notice %></p>
+
+<h1>Options</h1>
+
+<div id="options">
+  <% @options.each do |option| %>
+    <%= render option %>
+    <p>
+      <%= link_to "Show this option", option %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New option", new_option_path %>
+
