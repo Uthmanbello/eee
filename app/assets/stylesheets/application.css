@@ -185,9 +185,17 @@ a {
   padding-right: 10px;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-icon {
+  width: 90%;
+}
+
 .bills {
   display: flex;
-  gap: 30px;
   background-color: white;
   border: 1px solid #e0e6eb;
   padding: 15px 15px 0 15px;
@@ -299,10 +307,18 @@ a {
   display: flex;
 }
 
+.d-none {
+  display: none;
+}
+
 @media only screen and (min-device-width: 768px) {
   .icon {
     width: 8vw;
     height: 15vh;
     padding-right: 10px;
+  }
+
+  .d-none {
+    display: block;
   }
 }

@@ -10,7 +10,11 @@
   <div class= 'empty-div'></div>
 </div>
 
-
+<div id="lecturers">
+  <div class= 'budget'>
+    <p class= 'text2'>Total no. of Lecturers</p>
+    <p class= 'grey'><%= @lecturers.count %></p>
+  </div>
   <% @lecturers.each do |lecturer| %>
     <%= link_to lecturer do %>
       <div class= 'bills'>
