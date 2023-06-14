@@ -1,10 +1,11 @@
-<h1>Editing lecturer</h1>
+<div class='login'>
+  <%= link_to lecturer_path do %>
+    <i class="fa-solid fa-arrow-left fa-2x white"></i>
+  <% end %>
+
+  <p>EDIT LECTURER</p>
+  <div>
+  </div>
+</div>
 
 <%= render "form", lecturer: @lecturer %>
-
-<br>
-
-<div>
-  <%= link_to "Show this lecturer", @lecturer %> |
-  <%= link_to "Back to lecturers", lecturers_path %>
-</div>

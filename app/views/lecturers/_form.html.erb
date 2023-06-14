@@ -9,18 +9,7 @@
         <% end %>
       </ul>
     </div>
-  <% end %>
-
-  <div class='login'>
-    <%= link_to lecturers_path do %>
-      <i class="fa-solid fa-arrow-left fa-2x white"></i>
-    <% end %>
-
-    <p>NEW LECTURER</p>
-    <div>
-      <%= form.submit 'Save', class: 'submit-button' %>
-    </div>
-  </div>
+  <% end %>  
 
   <div class='login-fields'>
     <div class="field login-field text1 padding">
@@ -36,7 +25,7 @@
     </div>
 
     <div class="field login-field text1 padding">
-      <%= form.label :degress, style: "display: block" %>
+      <%= form.label :degrees, style: "display: block" %>
       <%= form.text_field :degrees, class: 'input-field' %>
       <hr class= 'rule'>    
     </div>
@@ -62,6 +51,12 @@
     <div class="field login-field text1 padding">
       <%= form.label :office, style: "display: block" %>
       <%= form.text_field :office, class: 'input-field' %>   
+    </div>
+  </div>
+
+  <div class='form-btn'>
+    <div class='edit-btn'>
+      <%= form.submit 'Save', class: 'submit-button' %>
     </div>
   </div>
 
