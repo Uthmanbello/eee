@@ -328,6 +328,10 @@ a {
   color: #fff;
 }
 
+.new-btn {
+  background-color: #5fb523;
+}
+
 .btn-border {
   border: 1px solid #fff;
   padding: 10px;
@@ -360,6 +364,14 @@ a {
   justify-content: center;
   align-items: center;
   gap: 20vw;
+  margin-bottom: 2vh;
+}
+
+.edit-del-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
   margin-bottom: 2vh;
 }
 

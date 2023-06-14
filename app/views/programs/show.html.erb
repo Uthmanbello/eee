@@ -1,27 +1,52 @@
-<p style="color: green"><%= notice %></p>
+<div class='login'>
+  <div>
+    <%= link_to programs_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p class='caps'><%= @program.name %></p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
 
 <%= render @program %>
 
 <div>
-  <%# <%= link_to "Edit this program", edit_program_path(@program) %>
-  <%= link_to "Back to programs", programs_path %>
   <%# <%= link_to "New program", new_program_path  %>
-
-  <%# <%= button_to "Destroy this program", @program, method: :delete  %>
 </div>
 
-<p style="color: green"><%= notice %></p>
+<% @options.each do |option| %>
+  <%= link_to option do %>
+    <div class= 'bills'>
+      <%= render option %>
+    </div>
+  <% end %>
+<% end %>
 
-<h1>Options</h1>
+<div class='edit-del-new'>
+  <%= link_to edit_program_path(@program) do %>
+    <div class='edit-btn'>
+      <div class='btn-border'>
+        EDIT
+      </div>
+    </div>
+  <% end %>
 
-<div id="options">
-  <% @options.each do |option| %>
-    <%= render option %>
-    <p>
-      <%= link_to "Show this option", option %>
-    </p>
+  <%= button_to @program, class: 'del-btn', method: :delete do %>
+    <div class='delete-btn'>
+      <div class='btn-border'>
+        DELETE
+      </div>
+    </div>
+  <% end %>
+
+  <%= link_to new_option_path do %>
+    <div class='edit-btn new-btn'>
+      <div class='btn-border'>
+        NEW
+      </div>
+    </div>
   <% end %>
 </div>
-
-<%= link_to "New option", new_option_path %>
 

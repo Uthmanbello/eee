@@ -1,10 +1,10 @@
-<h1>Editing program</h1>
+<div class='login'>
+  <%= link_to program_path do %>
+    <i class="fa-solid fa-arrow-left fa-2x white"></i>
+  <% end %>
+
+  <p>EDIT PROGRAM</p>
+  <div></div>
+</div>
 
 <%= render "form", program: @program %>
-
-<br>
-
-<div>
-  <%= link_to "Show this program", @program %> |
-  <%= link_to "Back to programs", programs_path %>
-</div>
