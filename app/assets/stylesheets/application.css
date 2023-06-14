@@ -73,11 +73,11 @@ a {
   flex-direction: column;
   align-items: center;
   padding: 0 15px;
-  margin-top: 10vh;
+  margin-top: 20vh;
 }
 
 .main-icon {
-  width: 20vw;
+  width: 40vw;
 }
 
 .title {
@@ -378,6 +378,14 @@ a {
 }
 
 @media only screen and (min-device-width: 768px) {
+  .main-icon {
+    width: 20vw;
+  }
+
+  .splash {
+    margin-top: 10vh;
+  }
+  
   .icon {
     width: 8vw;
     height: 15vh;

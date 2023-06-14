@@ -29,22 +29,8 @@
 
 
 <%= link_to lecturers_path, class: 'grey' do %>
-      LECTURERS
-    <% end %>
-
-<div id="bills">
-  <div class= 'budget'>
-    <p class= 'text2'>Total Budget</p>
-    <p class= 'grey'>&dollar;&nbsp;<%= calculate_total_budget %></p>
-  </div>
-  <% @bills.each do |bill| %>
-    <%= link_to bill do %>
-      <div class= 'bills'>
-        <%= render bill %>
-      </div>
-    <% end %>
-  <% end %>
-</div>
+  LECTURERS
+<% end %>
 
 <div class= 'empty'></div>
 
