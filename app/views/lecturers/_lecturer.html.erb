@@ -3,6 +3,10 @@
     <%= image_tag "#{lecturer.pic}", alt: "Bill icon", class: 'icon' %>
   </div>
 
+  <div class='appoint text2 d-none'>
+    <p><%= lecturer.appointment %></p>
+  </div>
+
   <div class= 'flex-column'>
     <p class= 'text2'><%= lecturer.name %></p>
     <p class= 'time'><%= lecturer.doa %></p>
