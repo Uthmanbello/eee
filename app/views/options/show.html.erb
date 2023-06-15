@@ -1,10 +1,37 @@
-<p style="color: green"><%= notice %></p>
-
-<%= render @option %>
-
-<div>
-  <%= link_to "Edit this option", edit_option_path(@option) %> |
-  <%= link_to "Back to options", options_path %>
-
-  <%= button_to "Destroy this option", @option, method: :delete %>
+<div class='login'>
+  <div>
+    <%= link_to programs_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p class='caps'>COURSES</p>
+  </div>
+  <div class= 'empty-div'></div>
 </div>
+
+<div id="courses">
+  <div class= 'budget'>
+    <p class= 'grey caps'><%= @option.name %></p>
+  </div>
+  <div class= 'budget'>
+    <p class= 'text2'>Total no. of units</p>
+    <p class= 'grey'><%= @courses.count %></p>
+  </div>
+
+  <% @courses.each do |course| %>
+      <div class= 'bills'>
+        <%= render course %>
+      </div>
+  <% end %>
+</div>
+
+<%# <%= link_to "New course", new_course_path %> 
+
+
+<%# <div> %>
+  <%# <%= link_to "Edit this option", edit_option_path(@option)  %>
+  <%# <%= link_to "Back to options", options_path %>
+
+  <%# <%= button_to "Destroy this option", @option, method: :delete %>
+<%# </div> %>

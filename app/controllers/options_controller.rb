@@ -8,6 +8,7 @@ class OptionsController < ApplicationController
 
   # GET /options/1 or /options/1.json
   def show
+    @courses = Course.where(option_id: params[:id])
   end
 
   # GET /options/new

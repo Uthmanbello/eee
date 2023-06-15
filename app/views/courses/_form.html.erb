@@ -1,0 +1,47 @@
+<%= form_with(model: course) do |form| %>
+  <% if course.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(course.errors.count, "error") %> prohibited this course from being saved:</h2>
+
+      <ul>
+        <% course.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :code, style: "display: block" %>
+    <%= form.text_field :code %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :units, style: "display: block" %>
+    <%= form.number_field :units %>
+  </div>
+
+  <div>
+    <%= form.label :semester, style: "display: block" %>
+    <%= form.text_field :semester %>
+  </div>
+
+  <div>
+    <%= form.label :year, style: "display: block" %>
+    <%= form.number_field :year %>
+  </div>
+
+  <div class="field login-field text1 padding">
+      <% @options = Option.all %>
+      <%= form.select :option_id, options_from_collection_for_select(@options, :id, :name, params[:option_id]), { prompt: "Select Option" }, class: "form-select input-field prompt" %>
+    </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
