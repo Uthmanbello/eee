@@ -52,7 +52,7 @@ class LecturersController < ApplicationController
     @lecturer.destroy
 
     respond_to do |format|
-      format.html { redirect_to lecturers_url, notice: "Lecturer was successfully destroyed." }
+      format.html { redirect_to bills_admin_url, notice: "Lecturer was successfully destroyed." }
       format.json { head :no_content }
     end
   end
