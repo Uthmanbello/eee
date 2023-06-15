@@ -235,6 +235,12 @@ a {
   margin-top: -5px;
 }
 
+.admin-name {
+  display: flex;
+  align-items: center;
+  flex-basis: 50%;
+}
+
 .big {
   height: 15vh;
   width: 100%;
@@ -313,7 +319,7 @@ a {
 }
 
 .edit-btn {
-  width: 30vw;
+  width: 18vw;
   padding-top: 2vw;
   padding-bottom: 2vw;
   background-color: #3778c2;
@@ -335,14 +341,14 @@ a {
 .btn-border {
   border: 1px solid #fff;
   padding: 10px;
-  width: 26vw;
+  width: 16vw;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .delete-btn {
-  width: 30vw;
+  width: 18vw;
   padding-top: 2vw;
   padding-bottom: 2vw;
   border: none;

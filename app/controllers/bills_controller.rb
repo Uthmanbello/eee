@@ -15,6 +15,10 @@ class BillsController < ApplicationController
   end
 
   def admin
+    @lecturers = Lecturer.all
+    @programs = Program.all
+    @options = Option.all
+    @courses = Course.all
   end
 
   # GET /bills/new
