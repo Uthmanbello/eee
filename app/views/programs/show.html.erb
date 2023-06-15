@@ -12,10 +12,6 @@
 
 <%= render @program %>
 
-<div>
-  <%# <%= link_to "New program", new_program_path  %>
-</div>
-
 <% @options.each do |option| %>
   <%= link_to option do %>
     <div class= 'bills'>
@@ -23,30 +19,3 @@
     </div>
   <% end %>
 <% end %>
-
-<div class='edit-del-new'>
-  <%= link_to edit_program_path(@program) do %>
-    <div class='edit-btn'>
-      <div class='btn-border'>
-        EDIT
-      </div>
-    </div>
-  <% end %>
-
-  <%= button_to @program, class: 'del-btn', method: :delete do %>
-    <div class='delete-btn'>
-      <div class='btn-border'>
-        DELETE
-      </div>
-    </div>
-  <% end %>
-
-  <%= link_to new_option_path do %>
-    <div class='edit-btn new-btn'>
-      <div class='btn-border'>
-        NEW
-      </div>
-    </div>
-  <% end %>
-</div>
-
