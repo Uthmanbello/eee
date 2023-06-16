@@ -353,7 +353,7 @@ a {
   padding-bottom: 2vw;
   border: none;
   border-radius: 4px;
-  background-color: red;
+  background-color: rgb(255, 68, 68);
   color: #fff;
   display: flex;
   justify-content: center;
