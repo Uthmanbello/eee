@@ -25,7 +25,7 @@ class LecturersController < ApplicationController
 
     respond_to do |format|
       if @lecturer.save
-        format.html { redirect_to bills_admin_url, notice: "Lecturer was successfully created." }
+        format.html { redirect_to bills_admin_lecturers_url, notice: "Lecturer was successfully created." }
         format.json { render :show, status: :created, location: @lecturer }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class LecturersController < ApplicationController
   def update
     respond_to do |format|
       if @lecturer.update(lecturer_params)
-        format.html { redirect_to bills_admin_url, notice: "Lecturer was successfully updated." }
+        format.html { redirect_to bills_admin_lecturers_url, notice: "Lecturer was successfully updated." }
         format.json { render :show, status: :ok, location: @lecturer }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class LecturersController < ApplicationController
     @lecturer.destroy
 
     respond_to do |format|
-      format.html { redirect_to bills_admin_url, notice: "Lecturer was successfully destroyed." }
+      format.html { redirect_to bills_admin_lecturers_url, notice: "Lecturer was successfully destroyed." }
       format.json { head :no_content }
     end
   end
