@@ -1,6 +1,6 @@
 <div class='login'>
   <div>
-    <%= link_to programs_path, class: 'white' do %>
+    <%= link_to program_path(@option.program), class: 'white' do %>
       <i class="fa-solid fa-arrow-left fa-2x white"></i>
     <% end %>
   </div>
@@ -10,13 +10,18 @@
   <div class= 'empty-div'></div>
 </div>
 
+<% units = 0 %>
+<% @courses.each do |course| %>
+   <% units += course.units %>
+  <% end %>
+
 <div id="courses">
   <div class= 'budget'>
     <p class= 'grey caps'><%= @option.name %></p>
   </div>
   <div class= 'budget'>
     <p class= 'text2'>Total no. of units</p>
-    <p class= 'grey'><%= @courses.count %></p>
+    <p class= 'grey'><%= @courses.count * units %></p>
   </div>
 
   <% @courses.each do |course| %>

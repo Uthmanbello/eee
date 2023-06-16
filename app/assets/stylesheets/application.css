@@ -476,4 +476,26 @@ a {
   .d-none {
     display: block;
   }
+
+  .programs {
+    margin-left: 2px;
+    width: 70%;
+    align-items: start;
+  }
+
+  .programs-desk {
+    display: flex;
+    flex-direction: row;
+    width:20vw;
+    height: 25vw;
+  }
+
+  .program-img {
+    width: 18vw;
+  }
+
+  .p {
+    display: flex;
+    flex-direction: row;
+  }
 }
