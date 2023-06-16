@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @semester %>
+
+<div>
+  <%= link_to "Edit this semester", edit_semester_path(@semester) %> |
+  <%= link_to "Back to semesters", semesters_path %>
+
+  <%= button_to "Destroy this semester", @semester, method: :delete %>
+</div>

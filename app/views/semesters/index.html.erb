@@ -1,0 +1,26 @@
+<div class='login'>
+  <div>
+    <%= link_to root_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p>SEMESTERS</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div class= 'budget'>
+  <p class= 'text2'>2023</p>
+  <p class= 'text2'>2022/2023 Session</p>
+</div>
+
+<div id="semesters">
+  <% @semesters.each do |semester| %>
+    <%= link_to semester do %>
+      <%= render semester %>
+    <% end %>
+  <% end %>
+</div>
+
+<%# <%= link_to "New semester", new_semester_path %> 
