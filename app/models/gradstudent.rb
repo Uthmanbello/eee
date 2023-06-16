@@ -1,0 +1,2 @@
+class Gradstudent < ApplicationRecord
+end

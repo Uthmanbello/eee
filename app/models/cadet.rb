@@ -1,0 +1,3 @@
+class Cadet < ApplicationRecord
+  
+end

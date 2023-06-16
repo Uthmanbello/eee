@@ -8,6 +8,8 @@ class GradcoursesController < ApplicationController
 
   # GET /gradcourses/1 or /gradcourses/1.json
   def show
+    @gradcourse = Gradcourse.find(params[:id])
+    @gradstudents = Gradstudent.where(level: @gradcourse.gradclass.name)
   end
 
   # GET /gradcourses/new

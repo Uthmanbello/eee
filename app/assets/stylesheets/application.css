@@ -225,6 +225,12 @@ a {
   flex-basis: 65%;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 4vw;
+}
+
 .bill-icon {
   flex-basis: 35%;
 }
@@ -399,6 +405,25 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.cadets-grading {
+  display: flex;
+  flex-direction: column;
+}
+
+.grading-field {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width:10vw;
+  text-align: center;
+  padding-top: 0px;
+}
+
+.grading-field:focus {
+  outline-color: #5fb523;
+  box-shadow: none;
 }
 
 .d-none {

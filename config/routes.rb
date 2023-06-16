@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :gradstudents
+  resources :cadets
   resources :gradcourses
   resources :gradclasses
   resources :semesters
