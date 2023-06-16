@@ -395,6 +395,12 @@ a {
   align-items: center;
 }
 
+.grad-classes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .d-none {
   display: none;
 }

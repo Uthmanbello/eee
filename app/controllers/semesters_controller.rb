@@ -8,6 +8,7 @@ class SemestersController < ApplicationController
 
   # GET /semesters/1 or /semesters/1.json
   def show
+    @gradclasses = Gradclass.where(semester_id: params[:id])
   end
 
   # GET /semesters/new
