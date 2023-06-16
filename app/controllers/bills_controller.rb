@@ -14,10 +14,22 @@ class BillsController < ApplicationController
     @items = Item.where(bill_id: params[:id])
   end
 
-  def admin
+  def admin  
+  end
+
+  def lecturers
     @lecturers = Lecturer.all
+  end
+
+  def programs
     @programs = Program.all
+  end
+
+  def options
     @options = Option.all
+  end
+
+  def courses
     @courses = Course.all
   end
 

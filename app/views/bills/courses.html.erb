@@ -1,0 +1,50 @@
+<div class='login'>
+  <div>
+    <%= link_to bills_admin_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p>COURSES (ADMIN)</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div class= 'budget'>
+  <p class= 'text2'>COURSES</p>
+  <%= link_to new_course_path do %>
+    <div class='edit-btn new-btn'>
+      <div class='btn-border'>
+        NEW
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<% @courses.each do |course| %>
+  <div class= 'bills'>
+    <div class= 'bills-list'>
+      <div class='admin-name text2'>
+        <p><%= course.code %></p>
+      </div>
+
+      <div class= 'edit-del-new'>
+      <%= link_to edit_course_path(course) do %>
+          <div class='edit-btn'>
+            <div class='btn-border'>
+              EDIT
+            </div>
+          </div>
+        <% end %>
+
+        <%= button_to course_path(course), class: 'del-btn', method: :delete do %>
+          <div class='delete-btn'>
+            <div class='btn-border'>
+              DEL
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+<% end %>

@@ -10,159 +10,34 @@
   <div class= 'empty-div'></div>
 </div>
 
-<div class= 'budget'>
-  <p class= 'text2'>LECTURERS</p>
-  <%= link_to new_lecturer_path do %>
-    <div class='edit-btn new-btn'>
-      <div class='btn-border'>
-        NEW
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<% @lecturers.each do |lecturer| %>
+<%= link_to bills_admin_lecturers_path do %>
   <div class= 'bills'>
-    <div class= 'bills-list'>
-      <div class='admin-name text2'>
-        <p><%= lecturer.name %></p>
-      </div>
-
-      <div class= 'edit-del-new'>
-      <%= link_to edit_lecturer_path(lecturer) do %>
-          <div class='edit-btn'>
-            <div class='btn-border'>
-              EDIT
-            </div>
-          </div>
-        <% end %>
-
-        <%= button_to lecturer_path(lecturer), class: 'del-btn', method: :delete do %>
-          <div class='delete-btn'>
-            <div class='btn-border'>
-              DEL
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <div class= 'flex-column'>
+      <p class= 'text2'>LECTURERS</p>
     </div>
   </div>
 <% end %>
 
-<div class= 'budget'>
-  <p class= 'text2'>PROGRAMS</p>
-  <%= link_to new_program_path do %>
-    <div class='edit-btn new-btn'>
-      <div class='btn-border'>
-        NEW
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<% @programs.each do |program| %>
+<%= link_to bills_admin_programs_path do %>
   <div class= 'bills'>
-    <div class= 'bills-list'>
-      <div class='admin-name text2'>
-        <p><%= program.name %></p>
-      </div>
-
-      <div class= 'edit-del-new'>
-      <%= link_to edit_program_path(program) do %>
-          <div class='edit-btn'>
-            <div class='btn-border'>
-              EDIT
-            </div>
-          </div>
-        <% end %>
-
-        <%= button_to program_path(program), class: 'del-btn', method: :delete do %>
-          <div class='delete-btn'>
-            <div class='btn-border'>
-              DEL
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <div class= 'flex-column'>
+      <p class= 'text2'>PROGRAMS</p>
     </div>
   </div>
 <% end %>
 
-
-<div class= 'budget'>
-  <p class= 'text2'>OPTIONS</p>
-  <%= link_to new_option_path do %>
-    <div class='edit-btn new-btn'>
-      <div class='btn-border'>
-        NEW
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<% @options.each do |option| %>
+<%= link_to bills_admin_options_path do %>
   <div class= 'bills'>
-    <div class= 'bills-list'>
-      <div class='admin-name text2'>
-        <p><%= option.name %></p>
-      </div>
-
-      <div class= 'edit-del-new'>
-      <%= link_to edit_option_path(option) do %>
-          <div class='edit-btn'>
-            <div class='btn-border'>
-              EDIT
-            </div>
-          </div>
-        <% end %>
-
-        <%= button_to option_path(option), class: 'del-btn', method: :delete do %>
-          <div class='delete-btn'>
-            <div class='btn-border'>
-              DEL
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <div class= 'flex-column'>
+      <p class= 'text2'>OPTIONS</p>
     </div>
   </div>
 <% end %>
 
-<div class= 'budget'>
-  <p class= 'text2'>COURSES</p>
-  <%= link_to new_course_path do %>
-    <div class='edit-btn new-btn'>
-      <div class='btn-border'>
-        NEW
-      </div>
-    </div>
-  <% end %>
-</div>
-
-<% @courses.each do |course| %>
+<%= link_to bills_admin_courses_path do %>
   <div class= 'bills'>
-    <div class= 'bills-list'>
-      <div class='admin-name text2'>
-        <p><%= course.code %></p>
-      </div>
-
-      <div class= 'edit-del-new'>
-      <%= link_to edit_course_path(course) do %>
-          <div class='edit-btn'>
-            <div class='btn-border'>
-              EDIT
-            </div>
-          </div>
-        <% end %>
-
-        <%= button_to course_path(course), class: 'del-btn', method: :delete do %>
-          <div class='delete-btn'>
-            <div class='btn-border'>
-              DEL
-            </div>
-          </div>
-        <% end %>
-      </div>
+    <div class= 'flex-column'>
+      <p class= 'text2'>COURSES</p>
     </div>
   </div>
 <% end %>
