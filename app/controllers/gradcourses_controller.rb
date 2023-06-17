@@ -10,6 +10,8 @@ class GradcoursesController < ApplicationController
   def show
     @gradcourse = Gradcourse.find(params[:id])
     @gradstudents = Gradstudent.where(level: @gradcourse.gradclass.name)
+
+    @grades = Grade.where(gradstudent_id: params[:id])
   end
 
   # GET /gradcourses/new

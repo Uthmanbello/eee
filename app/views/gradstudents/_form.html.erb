@@ -21,9 +21,10 @@
     <%= form.text_field :service %>
   </div>
 
-  <div>
-    <%= form.label :level, style: "display: block" %>
-    <%= form.text_field :level %>
+ 
+
+  <div class="field login-field text1 padding">
+    <%= form.select :level, options_for_select(['100', '200', '300', '400']), { prompt: 'Select Class' }, class: "form-select input-field prompt" %>
   </div>
 
   <div>

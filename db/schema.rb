@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_06_16_222353) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_16_231546) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -63,6 +63,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_222353) do
     t.datetime "updated_at", null: false
     t.index ["gradclass_id"], name: "index_gradcourses_on_gradclass_id"
     t.index ["semester_id"], name: "index_gradcourses_on_semester_id"
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.integer "ca1"
+    t.integer "ca2"
+    t.integer "exam"
+    t.integer "total"
+    t.string "grade"
+    t.bigint "gradcourse_id", null: false
+    t.bigint "gradstudent_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gradcourse_id"], name: "index_grades_on_gradcourse_id"
+    t.index ["gradstudent_id"], name: "index_grades_on_gradstudent_id"
   end
 
   create_table "gradstudents", force: :cascade do |t|
@@ -140,6 +154,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_06_16_222353) do
   add_foreign_key "gradclasses", "semesters"
   add_foreign_key "gradcourses", "gradclasses"
   add_foreign_key "gradcourses", "semesters"
+  add_foreign_key "grades", "gradcourses"
+  add_foreign_key "grades", "gradstudents"
   add_foreign_key "items", "bills"
   add_foreign_key "items", "users", column: "author_id"
   add_foreign_key "options", "programs"

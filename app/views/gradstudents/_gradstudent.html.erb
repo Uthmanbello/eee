@@ -1,4 +1,4 @@
-<%= form_with(model: gradstudent) do |form| %>
+<%= form_with(model: @grade) do |form| %>
 <div id="<%= dom_id gradstudent %>">
   <div class= 'bills cadets-grading'>
     <div class='flex-row'>
@@ -8,23 +8,37 @@
     </div>
     <div class='flex-row space'>
     <div class="field login-field text1">
-      <%= form.text_field :amount, class: 'grading-field' %>
+      <%= form.number_field :ca1, class: 'grading-field' %>
     </div>
 
     <div class="field login-field text1 padding">
-      <%= form.text_field :amount, class: 'grading-field' %>
+      <%= form.number_field :ca2, class: 'grading-field' %>
     </div>
 
     <div class="field login-field text1 padding">
-      <%= form.text_field :amount, class: 'grading-field' %>
+      <%= form.number_field :exam, class: 'grading-field' %>
     </div>
 
-    <%# <p class= 'grey'>CA2</p> %>
-    <%# <p class= 'grey'>Exam</p> %>
-    <p class= 'grey'>Total</p>
-    <p class= 'grey'>Grade</p>
+    <div class="field login-field text1 padding">
+      <%= form.number_field :total, class: 'grading-field' %>
     </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.text_field :grade, class: '' %>
+    </div>
+
+    <%= form.hidden_field :course_id %>
+    <%= form.hidden_field :student_id %>
   </div>
+</div>
 
 </div>
 <%end%>
+
+<%= form_with(model: @grade) do |form| %>
+
+  
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
