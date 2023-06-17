@@ -426,6 +426,22 @@ a {
   box-shadow: none;
 }
 
+.constant-field {
+  border: none;
+  width:10vw;
+  text-align: center;
+  padding-top: 0px;
+}
+
+.constant-field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.space {
+  display: flex;
+}
+
 .d-none {
   display: none;
 }
