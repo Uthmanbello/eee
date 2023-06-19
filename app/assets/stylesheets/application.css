@@ -457,6 +457,7 @@ a {
   font-size: 8vw;
   line-height: 1;
   padding: 10px;
+  border-radius: 4px;
   background-color: #3778c2;
   color: #fff;
   z-index: 2;
