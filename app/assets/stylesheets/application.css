@@ -454,7 +454,7 @@ a {
 .menu-icon {
   cursor: pointer;
   display: block;
-  font-size: 10vw;
+  font-size: 8vw;
   line-height: 1;
   padding: 10px;
   background-color: #3778c2;
@@ -470,7 +470,6 @@ a {
 
 #menu-toggle:checked ~ #menu {
   display: block;
-  /* margin-top: 12vw; */
   display: flex;
   flex-direction: row;
   position: fixed;
@@ -491,7 +490,9 @@ a {
   list-style: none;
   padding-top: 20vh;
   padding-left: 2vw;
-  transition: 0.3s ease; 
+  transition: 0.3s ease;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
 }
 
 #menu ul li {
@@ -528,6 +529,10 @@ a {
     width: 25vw;
     height: 25vw;
     padding-bottom: 2vw;
+  }
+
+  .home-bar {
+    margin-right: 3vw;
   }
   
   .icon {
@@ -607,5 +612,17 @@ a {
   .p {
     display: flex;
     flex-direction: row;
+  }
+
+  /* Hamburger styles */
+  .menu-icon {
+    font-size: 3vw;
+  }
+
+  #menu ul {
+    height: 100vh;
+    width: 40vw;
+    gap: 2vw;
+    padding-top: 10vh;
   }
 }
