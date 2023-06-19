@@ -9,8 +9,6 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
-    <%= stylesheet_link_tag 'hamburger', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'hamburger', 'data-turbolinks-track': 'reload' %>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Lobster&display=swap');
     </style>
@@ -18,6 +16,45 @@
   </head>
 
   <body>
+    <% if user_signed_in? %> 
+      <input type="checkbox" id="menu-toggle" />
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <div id="menu">
+        <ul>
+          <li>
+            <%= link_to bills_path, class: 'white' do %>
+              Home
+            <% end %>
+          </li>
+          <li>
+            <%= link_to lecturers_path, class: 'white' do %>
+              Lecturers
+            <% end %>
+          </li>
+          <li>
+            <%= link_to programs_path, class: 'white' do %>
+              Programs
+            <% end %>
+          </li>
+          <li>
+            <%= link_to semesters_path, class: 'white' do %>
+              Grading
+            <% end %>
+          </li>
+          <li>
+            <%= link_to bills_admin_path, class: 'white' do %>
+              Admin
+            <% end %>
+          </li>
+          <li>
+            <%= button_to destroy_user_session_path, method: :delete, class: 'submit-button' do %>
+              Log Out
+            <% end %>
+          </li>
+        </ul>
+      </div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>

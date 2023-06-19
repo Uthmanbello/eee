@@ -171,6 +171,10 @@ a {
   margin-right: 10px;
 }
 
+.home-bar {
+  margin-right: 14vw;
+}
+
 .budget {
   display: flex;
   justify-content: space-between;
@@ -440,6 +444,65 @@ a {
 
 .space {
   display: flex;
+}
+
+/* Hamburger Button Styles */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: block;
+  font-size: 10vw;
+  line-height: 1;
+  padding: 10px;
+  background-color: #3778c2;
+  color: #fff;
+  z-index: 2;
+  position: fixed;
+  right: 0;
+}
+
+#menu {
+  display: none;
+}
+
+#menu-toggle:checked ~ #menu {
+  display: block;
+  /* margin-top: 12vw; */
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  background-color: #3778c2d0;
+  background-size: 100%;
+  z-index: 1;
+  transition: 0.3s ease; 
+}
+
+#menu ul {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  gap: 5vw;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top: 20vh;
+  padding-left: 2vw;
+  transition: 0.3s ease; 
+}
+
+#menu ul li {
+  padding-bottom: 2vh;
+  font-size: 1.4em;
+  padding-left: 3vw;
+}
+
+#menu ul li a {
+  color: #fff;
+  text-decoration: none;
 }
 
 .d-none {

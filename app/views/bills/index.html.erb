@@ -1,33 +1,11 @@
-<div class="sliding-menu">
-  <%= link_to lecturers_path, class: 'white' do %>
-    Lecturers
-  <% end %>
-
-  <%= link_to programs_path, class: 'white' do %>
-    Programs
-  <% end %>
-
-  <%= link_to semesters_path, class: 'white' do %>
-    Grading
-  <% end %>
-
-  <%= link_to bills_admin_path, class: 'white' do %>
-    Admin
-  <% end %>
-</div>
-
 <div class='login'>
-  <div class= 'bars hamburger'>
-    <span class= 'bar'></span>
-    <span class= 'bar'></span>
-    <span class= 'bar'></span>
-  </div>
-  <div >
-    <p>HOME</p>
-  </div>
   <%= button_to destroy_user_session_path, method: :delete, class: 'submit-button' do %>
     <img class='small-icon' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADhUlEQVR4nO2ZW4hNURjHl8EYJINcCknDk2jiQSbkkQgxmoR5ozwrxZvcQ7kk5X59ECIphcETeZhmXBqlMTLkNkS5jttPX9bOmc+3z9nnnH1mzmH+tV/O+a//9/33+tba6+JcJ/4jAHOBF8BzYI4rRAALgG/8wXdgsStwE4VnhnAThWOG1CY61gwwHNgDHARGhnCqIpoIINyqEK1hwE7/DI3LxCigOSGB+ogmLFPfopgBbiZwHgNl2ZoYATxVwT8rzpywBA0jYYbbTM3AO8WRFzk8UxO9gTojmW2K9yTsLeuG/jfLTLPS3GDErQV6ZWLkmCG2DyhSvGeWiTAjIWaeKc0i4IAR/0i6JqRcNE4CXUK40vVNRomYRhLaPfJtZxu6RcApI49ZUU30MsZFXSbdmsxIGuV9W8lIKfeM0nilatgKjE03iTiMCIBxPodErHDJIE6BFtVoXdJGOTYiADYpKcmxxIUBqFYN3gL9XMcbKQXeKLlFyRpcV+SNmQaP04gA2KzkrjkL8ub9GijAz2y/qDEbGe1zCiDTd2nYgi8RtdkEjtuIwJjB5jsNYKsibXL5Z2SLktxikS4qUmUeGqlSkhcsUqMijclDI2OV5AOL9FqRBuShkYFK8pVF0l/P4jw0UqwkWwvVSEmyvVFAavlXSuu+IpXHEFiW6QGaYtAbr3JssEjnFakqhsAz/LJbnukx6C1UOZ6LssLc7vIMwC6V4waLNFOR7rk8A3+X/9+9DPQBvipiRhuqXAAoV7l9kR1kGFmPkx0uf8vqbDJypSJ/lCmvXTM2AAwGPqnc5iVr0N2fhiRit+tgAHtVTg+BbqkaLVeNfgAT2y1rBaDC55CIpS4VxKmxgZHz1/6uncHvvbqukLtSOVEFphpv4VIc66+oAHoAV4zqmJyukP5ACk5LgJxl39bEGSP+epcufInpUxX8W8pZmQEDgBojbk3KAZ6iRu8YojJmpuTAxFR1FxNAxmzfbMWHGIMffzQjN1jDYroRO6yOewLUSw7ZxkjsmavYaPXXDRVpanbxU+t+Y1MX4HLWPWEE7gqsNWYzXXLSS8uAaXLABwzyT5n/Tf47FFJCASTGGokZqwllaAJwi9yhDpiUMwNG71Qby+ps0AAsyWkvJDEkt0rTgRPAhwySfw8c9xptrvQ6DH7BOQVY7e8fb/hDv5f+afS/HQVWyRc68lKjE67w8Avwh/ejH7myQQAAAABJRU5ErkJggg==">
   <% end %>
+  <div>
+    <p class='home-bar'>HOME</p>
+  </div>
+  <div></div>
   
 </div>
 
@@ -44,23 +22,6 @@
     <p>Phone number: +234 7036313352</p>
   </div>
 </div>
-
-
-<%= link_to lecturers_path, class: 'grey' do %>
-  LECTURERS
-<% end %>
-
-<%= link_to programs_path, class: 'grey' do %>
-  PROGRAMS
-<% end %>
-
-<%= link_to semesters_path, class: 'grey' do %>
-  GRADING
-<% end %>
-
-<%= link_to bills_admin_path, class: 'grey' do %>
-  ADMIN
-<% end %>
 
 <div class= 'empty'></div>
 
