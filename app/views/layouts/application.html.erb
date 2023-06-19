@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>EEE</title>
+    <title>NDA-EEE</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -9,6 +9,8 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
 
+    <%= stylesheet_link_tag 'hamburger', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'hamburger', 'data-turbolinks-track': 'reload' %>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Lobster&display=swap');
     </style>
