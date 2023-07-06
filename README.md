@@ -124,6 +124,6 @@ I would like to also give credit to Gregoire Vella in Behance for his wonderful 
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/Uthmanbello/budget_/blob/dev/LICENSE) licensed.
+This project is [MIT](https://github.com/Uthmanbello/budget/blob/dev/LICENSE) licensed.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
