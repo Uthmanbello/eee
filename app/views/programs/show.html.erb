@@ -1,0 +1,21 @@
+<div class='login'>
+  <div>
+    <%= link_to programs_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p class='caps'><%= @program.name %></p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<%= render @program %>
+
+<% @options.each do |option| %>
+  <%= link_to option do %>
+    <div class= 'bills'>
+      <%= render option %>
+    </div>
+  <% end %>
+<% end %>

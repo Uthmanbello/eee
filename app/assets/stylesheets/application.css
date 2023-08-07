@@ -64,17 +64,26 @@ a {
   color: #e3e7eb;
 }
 
+.caps {
+  text-transform: uppercase;
+}
+
 .splash {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 0 15px;
-  margin-top: 30vh;
+  margin-top: 20vh;
+}
+
+.main-icon {
+  width: 40vw;
 }
 
 .title {
-  font-size: 2.8em;
+  font-size: 2.2em;
   font-family: 'Lobster', cursive;
+  text-align: center;
 }
 
 .login-signup {
@@ -162,6 +171,10 @@ a {
   margin-right: 10px;
 }
 
+.home-bar {
+  margin-right: 14vw;
+}
+
 .budget {
   display: flex;
   justify-content: space-between;
@@ -170,15 +183,32 @@ a {
   padding: 15px;
 }
 
+.small-icon {
+  width: 30px;
+}
+
 .icon {
-  width: 23vw;
+  width: 28vw;
   height: 12vh;
   padding-right: 10px;
 }
 
+.home {
+  display: flex;
+  flex-direction: column;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+}
+
+.home-icon {
+  width: 90%;
+}
+
 .bills {
   display: flex;
-  justify-content: space-between;
   background-color: white;
   border: 1px solid #e0e6eb;
   padding: 15px 15px 0 15px;
@@ -196,21 +226,29 @@ a {
 .flex-column {
   display: flex;
   flex-direction: column;
-  flex-basis: 60%;
+  flex-basis: 65%;
 }
 
-.bill-total {
-  flex-basis: 10%;
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: 4vw;
 }
 
 .bill-icon {
-  flex-basis: 30%;
+  flex-basis: 35%;
 }
 
 .time {
   font-size: 0.7em;
   color: #94989c;
   margin-top: -5px;
+}
+
+.admin-name {
+  display: flex;
+  align-items: center;
+  flex-basis: 50%;
 }
 
 .big {
@@ -290,10 +328,301 @@ a {
   display: flex;
 }
 
+.edit-btn {
+  width: 18vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  background-color: #3778c2;
+  color: #fff;
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-btn a {
+  color: #fff;
+}
+
+.new-btn {
+  background-color: #5fb523;
+}
+
+.btn-border {
+  border: 1px solid #fff;
+  padding: 10px;
+  width: 16vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.delete-btn {
+  width: 18vw;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  border: none;
+  border-radius: 4px;
+  background-color: rgb(255, 68, 68);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.del-btn {
+  border: none;
+  background: none;
+}
+
+.edit-del {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20vw;
+  margin-bottom: 2vh;
+}
+
+.edit-del-new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  margin-bottom: 2vh;
+}
+
+.form-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2vh;
+}
+
+.programs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.grad-classes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cadets-grading {
+  display: flex;
+  flex-direction: column;
+}
+
+.grading-field {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  width: 10vw;
+  text-align: center;
+  padding-top: 0;
+}
+
+.grading-field:focus {
+  outline-color: #5fb523;
+  box-shadow: none;
+}
+
+.constant-field {
+  border: none;
+  width: 10vw;
+  text-align: center;
+  padding-top: 0;
+}
+
+.constant-field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.space {
+  display: flex;
+}
+
+/* Hamburger Button Styles */
+#menu-toggle {
+  display: none;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: block;
+  font-size: 8vw;
+  line-height: 1;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #3778c2;
+  color: #fff;
+  z-index: 2;
+  position: fixed;
+  right: 0;
+}
+
+#menu {
+  display: none;
+}
+
+#menu-toggle:checked ~ #menu {
+  display: block;
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  background-color: #3778c2d0;
+  background-size: 100%;
+  z-index: 1;
+  transition: 0.3s ease;
+}
+
+#menu ul {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  gap: 5vw;
+  flex-wrap: wrap;
+  list-style: none;
+  padding-top: 20vh;
+  padding-left: 2vw;
+  transition: 0.3s ease;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+}
+
+#menu ul li {
+  padding-bottom: 2vh;
+  font-size: 1.4em;
+  padding-left: 3vw;
+}
+
+#menu ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.d-none {
+  display: none;
+}
+
 @media only screen and (min-device-width: 768px) {
+  .main-icon {
+    width: 20vw;
+  }
+
+  .splash {
+    margin-top: 10vh;
+  }
+
+  .home {
+    display: flex;
+    flex-direction: row;
+    gap: 10vw;
+  }
+
+  .home-icon {
+    width: 25vw;
+    height: 25vw;
+    padding-bottom: 2vw;
+  }
+
+  .home-bar {
+    margin-right: 3vw;
+  }
+
   .icon {
     width: 8vw;
     height: 15vh;
     padding-right: 10px;
+  }
+
+  .flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+  }
+
+  .bill-total {
+    flex-basis: 20%;
+  }
+
+  .bill-icon {
+    flex-basis: 10%;
+  }
+
+  .appoint {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 20%;
+  }
+
+  .edit-btn {
+    width: 10vw;
+    padding-top: 0.7vw;
+    padding-bottom: 0.7vw;
+  }
+
+  .delete-btn {
+    width: 10vw;
+    padding-top: 0.7vw;
+    padding-bottom: 0.7vw;
+  }
+
+  .btn-border {
+    border: 1px solid #fff;
+    width: 9vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .form-btn {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+  }
+
+  .d-none {
+    display: block;
+  }
+
+  .programs {
+    margin-left: 2px;
+    width: 70%;
+    align-items: start;
+  }
+
+  .programs-desk {
+    display: flex;
+    flex-direction: row;
+    width: 20vw;
+    height: 25vw;
+  }
+
+  .program-img {
+    width: 18vw;
+  }
+
+  .p {
+    display: flex;
+    flex-direction: row;
+  }
+
+  /* Hamburger styles */
+  .menu-icon {
+    font-size: 3vw;
+  }
+
+  #menu ul {
+    height: 100vh;
+    width: 40vw;
+    gap: 2vw;
+    padding-top: 10vh;
   }
 }

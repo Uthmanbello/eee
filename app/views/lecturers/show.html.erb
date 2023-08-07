@@ -1,0 +1,30 @@
+<div class='login'>
+  <div>
+    <%= link_to lecturers_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p class='caps'><%= @lecturer.appointment %></p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div class= 'bills home text2'>
+  <div class='img-container'>
+    <%= image_tag "#{@lecturer.pic}", alt: "#{@lecturer.name}", class: 'home-icon' %>
+  </div>
+  <div>
+    <h1 class='grey'><%= @lecturer.name %></h1>
+    <p><span class='grey'>Degrees:</span> <%= @lecturer.degrees %></p>
+    <p><span class='grey'>Appointment:</span> <%= @lecturer.appointment %></p>
+    <p><span class='grey'>Office(s):</span> <%= @lecturer.office %><p>
+    <p><span class='grey'>DOFA:</span> <%= @lecturer.doa %><p>
+  </div>
+</div>
+
+<div class= 'empty'></div>
+
+<div class= 'big'>
+  <a href="mailto:<%= @lecturer.email %>" class="white small">CONTACT</a>
+</div>

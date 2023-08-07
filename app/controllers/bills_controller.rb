@@ -1,6 +1,7 @@
 class BillsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_bill, only: %i[show edit update destroy]
+  before_action :set_bill, except: [:admin]
 
   # GET /bills or /bills.json
   def index
@@ -11,6 +12,24 @@ class BillsController < ApplicationController
   def show
     @bills = @bills = Bill.where(author_id: current_user.id)
     @items = Item.where(bill_id: params[:id])
+  end
+
+  def admin; end
+
+  def lecturers
+    @lecturers = Lecturer.all
+  end
+
+  def programs
+    @programs = Program.all
+  end
+
+  def options
+    @options = Option.all
+  end
+
+  def courses
+    @courses = Course.all
   end
 
   # GET /bills/new
@@ -63,7 +82,7 @@ class BillsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_bill
-    @bill = Bill.find(params[:id])
+    @bill = Bill.find(params[:id]) if params[:id]
   end
 
   # Only allow a list of trusted parameters through.

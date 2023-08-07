@@ -1,0 +1,52 @@
+<%= form_with(model: grade) do |form| %>
+  <% if grade.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(grade.errors.count, "error") %> prohibited this grade from being saved:</h2>
+
+      <ul>
+        <% grade.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :ca1, style: "display: block" %>
+    <%= form.number_field :ca1 %>
+  </div>
+
+  <div>
+    <%= form.label :ca2, style: "display: block" %>
+    <%= form.number_field :ca2 %>
+  </div>
+
+  <div>
+    <%= form.label :exam, style: "display: block" %>
+    <%= form.number_field :exam %>
+  </div>
+
+  <div>
+    <%= form.label :total, style: "display: block" %>
+    <%= form.number_field :total %>
+  </div>
+
+  <div>
+    <%= form.label :grade, style: "display: block" %>
+    <%= form.text_field :grade %>
+  </div>
+
+  <div>
+    <%= form.label :gradcourse_id, style: "display: block" %>
+    <%= form.text_field :gradcourse_id %>
+  </div>
+
+  <div>
+    <%= form.label :gradstudent_id, style: "display: block" %>
+    <%= form.text_field :gradstudent_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

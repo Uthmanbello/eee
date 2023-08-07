@@ -1,0 +1,63 @@
+<%= form_with(model: lecturer) do |form| %>
+  <% if lecturer.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(lecturer.errors.count, "error") %> prohibited this lecturer from being saved:</h2>
+
+      <ul>
+        <% lecturer.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>  
+
+  <div class='login-fields'>
+    <div class="field login-field text1 padding">
+      <%= form.label :name, style: "display: block" %>
+      <%= form.text_field :name, class: 'input-field' %>
+      <hr class= 'rule'>    
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.label :email, style: "display: block" %>
+      <%= form.text_field :email, class: 'input-field' %>
+      <hr class= 'rule'>    
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.label :degrees, style: "display: block" %>
+      <%= form.text_field :degrees, class: 'input-field' %>
+      <hr class= 'rule'>    
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.label :appointment, style: "display: block" %>
+      <%= form.text_field :appointment, class: 'input-field' %>
+      <hr class= 'rule'>    
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.label :doa, style: "display: block" %>
+      <%= form.text_field :doa, class: 'input-field' %>
+      <hr class= 'rule'>    
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.label :pic, style: "display: block" %>
+      <%= form.text_field :pic, class: 'input-field' %>
+      <hr class= 'rule'>    
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.label :office, style: "display: block" %>
+      <%= form.text_field :office, class: 'input-field' %>   
+    </div>
+  </div>
+
+  <div class='form-btn'>
+    <div class='edit-btn'>
+      <%= form.submit 'Save', class: 'submit-button' %>
+    </div>
+  </div>
+
+<% end %>

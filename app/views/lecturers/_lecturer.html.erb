@@ -1,0 +1,18 @@
+<div id="<%= dom_id lecturer %>" class= 'bills-list'>
+  <div class= 'bill-icon'>
+    <%= image_tag "#{lecturer.pic}", alt: "Bill icon", class: 'icon' %>
+  </div>
+
+  <div class='appoint text2 d-none'>
+    <p><%= lecturer.appointment %></p>
+  </div>
+
+  <div class= 'flex-column'>
+    <p class= 'text2'><%= lecturer.name %></p>
+    <p class= 'time'><%= lecturer.doa %></p>
+  </div>
+
+  <div class= 'bill-total'>
+    <p class= 'grey d-none'><%= lecturer.office %></p>
+  </div>
+</div>

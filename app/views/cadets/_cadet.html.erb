@@ -1,0 +1,30 @@
+<%= form_with(model: cadet) do |form| %>
+<div id="<%= dom_id cadet %>">
+  <div class= 'bills cadets-grading'>
+    <div class='flex-row'>
+      <p class= 'grey'><%= cadet.num %></p>
+      <p class= 'text2'><%= cadet.service %></p>
+      <p class= 'text2'><%= cadet.name %></p>
+    </div>
+    <div class='flex-row space'>
+    <div class="field login-field text1">
+      <%= form.text_field :amount, class: 'grading-field' %>
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.text_field :amount, class: 'grading-field' %>
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.text_field :amount, class: 'grading-field' %>
+    </div>
+
+    <%# <p class= 'grey'>CA2</p> %>
+    <%# <p class= 'grey'>Exam</p> %>
+    <p class= 'grey'>Total</p>
+    <p class= 'grey'>Grade</p>
+    </div>
+  </div>
+
+</div>
+<%end%>

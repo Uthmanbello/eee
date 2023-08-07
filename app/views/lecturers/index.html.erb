@@ -1,0 +1,25 @@
+<div class='login'>
+  <div>
+    <%= link_to bills_path, class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p>LECTURERS</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div id="lecturers">
+  <div class= 'budget'>
+    <p class= 'text2'>Total no. of lecturers</p>
+    <p class= 'grey'><%= @lecturers.count %></p>
+  </div>
+  <% @lecturers.each do |lecturer| %>
+    <%= link_to lecturer do %>
+      <div class= 'bills'>
+        <%= render lecturer %>
+      </div>
+    <% end %>
+  <% end %>
+</div>

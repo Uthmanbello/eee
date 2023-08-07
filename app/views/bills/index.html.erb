@@ -1,33 +1,30 @@
 <div class='login'>
-  <div class= 'bars'>
-    <span class= 'bar'></span>
-    <span class= 'bar'></span>
-    <span class= 'bar'></span>
-  </div>
-  <div >
-    <p>BILLS</p>
-  </div>
+  <%= button_to destroy_user_session_path, method: :delete, class: 'submit-button' do %>
+    <img class='small-icon' src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAADhUlEQVR4nO2ZW4hNURjHl8EYJINcCknDk2jiQSbkkQgxmoR5ozwrxZvcQ7kk5X59ECIphcETeZhmXBqlMTLkNkS5jttPX9bOmc+3z9nnnH1mzmH+tV/O+a//9/33+tba6+JcJ/4jAHOBF8BzYI4rRAALgG/8wXdgsStwE4VnhnAThWOG1CY61gwwHNgDHARGhnCqIpoIINyqEK1hwE7/DI3LxCigOSGB+ogmLFPfopgBbiZwHgNl2ZoYATxVwT8rzpywBA0jYYbbTM3AO8WRFzk8UxO9gTojmW2K9yTsLeuG/jfLTLPS3GDErQV6ZWLkmCG2DyhSvGeWiTAjIWaeKc0i4IAR/0i6JqRcNE4CXUK40vVNRomYRhLaPfJtZxu6RcApI49ZUU30MsZFXSbdmsxIGuV9W8lIKfeM0nilatgKjE03iTiMCIBxPodErHDJIE6BFtVoXdJGOTYiADYpKcmxxIUBqFYN3gL9XMcbKQXeKLlFyRpcV+SNmQaP04gA2KzkrjkL8ub9GijAz2y/qDEbGe1zCiDTd2nYgi8RtdkEjtuIwJjB5jsNYKsibXL5Z2SLktxikS4qUmUeGqlSkhcsUqMijclDI2OV5AOL9FqRBuShkYFK8pVF0l/P4jw0UqwkWwvVSEmyvVFAavlXSuu+IpXHEFiW6QGaYtAbr3JssEjnFakqhsAz/LJbnukx6C1UOZ6LssLc7vIMwC6V4waLNFOR7rk8A3+X/9+9DPQBvipiRhuqXAAoV7l9kR1kGFmPkx0uf8vqbDJypSJ/lCmvXTM2AAwGPqnc5iVr0N2fhiRit+tgAHtVTg+BbqkaLVeNfgAT2y1rBaDC55CIpS4VxKmxgZHz1/6uncHvvbqukLtSOVEFphpv4VIc66+oAHoAV4zqmJyukP5ACk5LgJxl39bEGSP+epcufInpUxX8W8pZmQEDgBojbk3KAZ6iRu8YojJmpuTAxFR1FxNAxmzfbMWHGIMffzQjN1jDYroRO6yOewLUSw7ZxkjsmavYaPXXDRVpanbxU+t+Y1MX4HLWPWEE7gqsNWYzXXLSS8uAaXLABwzyT5n/Tf47FFJCASTGGokZqwllaAJwi9yhDpiUMwNG71Qby+ps0AAsyWkvJDEkt0rTgRPAhwySfw8c9xptrvQ6DH7BOQVY7e8fb/hDv5f+afS/HQVWyRc68lKjE67w8Avwh/ejH7myQQAAAABJRU5ErkJggg==">
+  <% end %>
   <div>
-    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: 'submit-button' %>
+    <p class='home-bar'>HOME</p>
   </div>
+  <div></div>
+  
 </div>
 
-<div id="bills">
-  <div class= 'budget'>
-    <p class= 'text2'>Total Budget</p>
-    <p class= 'grey'>&dollar;&nbsp;<%= calculate_total_budget %></p>
+<div class= 'bills home text2'>
+  <div class='img-container'>
+    <%= image_tag "school.png", alt: "nda icon", class: 'home-icon' %>
   </div>
-  <% @bills.each do |bill| %>
-    <%= link_to bill do %>
-      <div class= 'bills'>
-        <%= render bill %>
-      </div>
-    <% end %>
-  <% end %>
+  <div>
+    <h2>ELECTRICAL/ELECTRONIC ENGINEERING DEPARTMENT</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at commodo nisl. Curabitur et sagittis justo. Nulla leo dolor, luctus eget aliquam porttitor</p>
+    <p>Est: 20 Nov 1995<p>
+    <p>Location: Nigerian Defence Academy, Afaka, Kaduna</p>
+    <p>PO Box: 1908</p>
+    <p>Phone number: +234 7036313352</p>
+  </div>
 </div>
 
 <div class= 'empty'></div>
 
 <div class= 'big'>
-    <%= link_to "ADD", new_bill_path, class: 'white small' %>
+  <a href="mailto:uthmanbello88@gmail.com" class="white small">CONTACT</a>
 </div>

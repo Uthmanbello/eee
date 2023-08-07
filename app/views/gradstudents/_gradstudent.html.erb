@@ -1,0 +1,44 @@
+<%= form_with(model: @grade) do |form| %>
+<div id="<%= dom_id gradstudent %>">
+  <div class= 'bills cadets-grading'>
+    <div class='flex-row'>
+      <p class= 'grey'><%= gradstudent.num %></p>
+      <p class= 'text2'><%= gradstudent.service %></p>
+      <p class= 'text2'><%= gradstudent.name %></p>
+    </div>
+    <div class='space'>
+    <div class="field login-field text1 padding">
+      <%= form.number_field :ca1, class: 'grading-field', placeholder: '--' %>
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.number_field :ca2, class: 'grading-field', placeholder: '--' %>
+    </div>
+
+    <div class="field login-field text1 padding">
+      <%= form.number_field :exam, class: 'grading-field', placeholder: '--' %>
+    </div>
+
+    <div class="field login-field grey padding">
+      <%= form.number_field :total, class: 'constant-field', readonly: true, placeholder: 'Tot' %>
+    </div>
+
+    <div class="field login-field grey padding">
+      <%= form.text_field :grade, class: 'constant-field', readonly: true, placeholder: 'Gra' %>
+    </div>
+
+    <%= form.hidden_field :gradcourse_id, value: @gradcourse.id %>
+    <%= form.hidden_field :gradstudent_id, value: gradstudent.id %>
+
+    <%# <%= gradstudent.id%>
+    <%# <%= @gradcourse.id %>
+
+    <%# <div>
+      <%= form.submit %>
+    <%# </div> %>
+    
+  </div>
+</div>
+
+</div>
+<%end%>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_05_27_201052) do
+ActiveRecord::Schema[7.0].define(version: 2023_06_16_231546) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,71 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_27_201052) do
     t.index ["author_id"], name: "index_bills_on_author_id"
   end
 
+  create_table "cadets", force: :cascade do |t|
+    t.string "name"
+    t.string "service"
+    t.integer "num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "level"
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string "code"
+    t.string "title"
+    t.integer "units"
+    t.string "semester"
+    t.integer "year"
+    t.bigint "option_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["option_id"], name: "index_courses_on_option_id"
+  end
+
+  create_table "gradclasses", force: :cascade do |t|
+    t.string "name"
+    t.string "rc"
+    t.bigint "semester_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["semester_id"], name: "index_gradclasses_on_semester_id"
+  end
+
+  create_table "gradcourses", force: :cascade do |t|
+    t.string "code"
+    t.string "title"
+    t.integer "units"
+    t.bigint "semester_id", null: false
+    t.bigint "gradclass_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gradclass_id"], name: "index_gradcourses_on_gradclass_id"
+    t.index ["semester_id"], name: "index_gradcourses_on_semester_id"
+  end
+
+  create_table "grades", force: :cascade do |t|
+    t.integer "ca1"
+    t.integer "ca2"
+    t.integer "exam"
+    t.integer "total"
+    t.string "grade"
+    t.bigint "gradcourse_id", null: false
+    t.bigint "gradstudent_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["gradcourse_id"], name: "index_grades_on_gradcourse_id"
+    t.index ["gradstudent_id"], name: "index_grades_on_gradstudent_id"
+  end
+
+  create_table "gradstudents", force: :cascade do |t|
+    t.string "name"
+    t.string "service"
+    t.string "level"
+    t.integer "num"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "items", force: :cascade do |t|
     t.string "name"
     t.decimal "amount"
@@ -32,6 +97,43 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_27_201052) do
     t.datetime "updated_at", null: false
     t.index ["author_id"], name: "index_items_on_author_id"
     t.index ["bill_id"], name: "index_items_on_bill_id"
+  end
+
+  create_table "lecturers", force: :cascade do |t|
+    t.string "name"
+    t.string "email"
+    t.string "degrees"
+    t.string "appointment"
+    t.string "doa"
+    t.string "pic"
+    t.string "office"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "options", force: :cascade do |t|
+    t.string "name"
+    t.bigint "program_id", null: false
+    t.string "option_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_id"], name: "index_options_on_program_id"
+  end
+
+  create_table "programs", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.string "establish"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "semesters", force: :cascade do |t|
+    t.string "name"
+    t.string "session"
+    t.string "year"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,6 +150,13 @@ ActiveRecord::Schema[7.0].define(version: 2023_05_27_201052) do
   end
 
   add_foreign_key "bills", "users", column: "author_id"
+  add_foreign_key "courses", "options"
+  add_foreign_key "gradclasses", "semesters"
+  add_foreign_key "gradcourses", "gradclasses"
+  add_foreign_key "gradcourses", "semesters"
+  add_foreign_key "grades", "gradcourses"
+  add_foreign_key "grades", "gradstudents"
   add_foreign_key "items", "bills"
   add_foreign_key "items", "users", column: "author_id"
+  add_foreign_key "options", "programs"
 end

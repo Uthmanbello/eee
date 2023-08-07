@@ -1,0 +1,52 @@
+<div class='login'>
+  <div>
+    <%= link_to gradclass_path(@gradcourse.gradclass), class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p class='caps'><%= @gradcourse.code %> CADETS</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div class= 'bills cadets-grading'>
+  <div class='flex-row'>
+    <p class= 'green'>LABELS</p>
+  </div>
+  <div class='flex-row space'>
+  <p class= 'green'>CA1</p>
+  <p class= 'green'>CA2</p>
+  <p class= 'green'>Exam</p>
+  <p class= 'green'>Total</p>
+  <p class= 'green'>Grade</p>
+  </div>
+</div>
+<div id="gradstudents">
+  <% @gradstudents.each do |gradstudent| %>
+    <%= render gradstudent %>
+  <% end %>
+</div>
+
+<%# <%= link_to "Gradstudent", new_gradstudent_path %>
+
+<%# <p style="color: green"><%= notice %>
+
+<%# <h1>Grades</h1> %>
+
+
+
+<%# <%= link_to "New grade", new_grade_path %>
+
+
+<%# <%= link_to "Show this cadet", cadet %> 
+
+<%# <%= link_to "New cadet", new_cadet_path %>
+
+
+<%# <div> %>
+   <%# <%= link_to "Edit this gradcourse", edit_gradcourse_path(@gradcourse)  %>
+  <%# <%= link_to "Back to gradcourses", gradcourses_path  %>
+
+  <%# <%= button_to "Destroy this gradcourse", @gradcourse, method: :delete  %>
+<%# </div> %>

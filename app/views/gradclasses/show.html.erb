@@ -1,0 +1,29 @@
+<div class='login'>
+  <div>
+    <%= link_to semester_path(@gradclass.semester), class: 'white' do %>
+      <i class="fa-solid fa-arrow-left fa-2x white"></i>
+    <% end %>
+  </div>
+  <div>
+    <p class='caps'><%= @gradclass.name %> LEVEL - <%= @gradclass.semester.name %> SEMESTER</p>
+  </div>
+  <div class= 'empty-div'></div>
+</div>
+
+<div id="gradcourses">
+  <% @gradcourses.each do |gradcourse| %>
+    <%= link_to gradcourse do %>
+      <%= render gradcourse %>
+    <% end %>
+  <% end %>
+</div>
+
+<%# <%= link_to "New gradcourse", new_gradcourse_path %> 
+
+
+<%# <div> %>
+  <%# <%= link_to "Edit this gradclass", edit_gradclass_path(@gradclass)  %>
+  <%# <%= link_to "Back to gradclasses", gradclasses_path  %>
+
+  <%# <%= button_to "Destroy this gradclass", @gradclass, method: :delete  %>
+<%# </div> %>
