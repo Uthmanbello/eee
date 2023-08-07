@@ -420,9 +420,9 @@ a {
   border-top: none;
   border-right: none;
   border-left: none;
-  width:10vw;
+  width: 10vw;
   text-align: center;
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .grading-field:focus {
@@ -432,9 +432,9 @@ a {
 
 .constant-field {
   border: none;
-  width:10vw;
+  width: 10vw;
   text-align: center;
-  padding-top: 0px;
+  padding-top: 0;
 }
 
 .constant-field:focus {
@@ -478,7 +478,7 @@ a {
   background-color: #3778c2d0;
   background-size: 100%;
   z-index: 1;
-  transition: 0.3s ease; 
+  transition: 0.3s ease;
 }
 
 #menu ul {
@@ -535,7 +535,7 @@ a {
   .home-bar {
     margin-right: 3vw;
   }
-  
+
   .icon {
     width: 8vw;
     height: 15vh;
@@ -547,11 +547,11 @@ a {
     flex-direction: column;
     flex-basis: 50%;
   }
-  
+
   .bill-total {
     flex-basis: 20%;
   }
-  
+
   .bill-icon {
     flex-basis: 10%;
   }
@@ -562,7 +562,7 @@ a {
     align-items: center;
     flex-basis: 20%;
   }
-  
+
 
   .edit-btn {
     width: 10vw;
@@ -583,7 +583,7 @@ a {
     justify-content: center;
     align-items: center;
   }
-  
+
   .form-btn {
     margin-top: 2vh;
     margin-bottom: 2vh;
@@ -602,7 +602,7 @@ a {
   .programs-desk {
     display: flex;
     flex-direction: row;
-    width:20vw;
+    width: 20vw;
     height: 25vw;
   }
 

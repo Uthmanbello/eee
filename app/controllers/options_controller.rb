@@ -1,5 +1,5 @@
 class OptionsController < ApplicationController
-  before_action :set_option, only: %i[ show edit update destroy ]
+  before_action :set_option, only: %i[show edit update destroy]
 
   # GET /options or /options.json
   def index
@@ -14,12 +14,11 @@ class OptionsController < ApplicationController
   # GET /options/new
   def new
     @option = Option.new
-    @programs = Program.all 
+    @programs = Program.all
   end
 
   # GET /options/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /options or /options.json
   def create
@@ -27,7 +26,7 @@ class OptionsController < ApplicationController
 
     respond_to do |format|
       if @option.save
-        format.html { redirect_to bills_admin_options_url, notice: "Option was successfully created." }
+        format.html { redirect_to bills_admin_options_url, notice: 'Option was successfully created.' }
         format.json { render :show, status: :created, location: @option }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +39,7 @@ class OptionsController < ApplicationController
   def update
     respond_to do |format|
       if @option.update(option_params)
-        format.html { redirect_to bills_admin_options_url, notice: "Option was successfully updated." }
+        format.html { redirect_to bills_admin_options_url, notice: 'Option was successfully updated.' }
         format.json { render :show, status: :ok, location: @option }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -54,19 +53,20 @@ class OptionsController < ApplicationController
     @option.destroy
 
     respond_to do |format|
-      format.html { redirect_to bills_admin_options_url, notice: "Option was successfully destroyed." }
+      format.html { redirect_to bills_admin_options_url, notice: 'Option was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_option
-      @option = Option.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def option_params
-      params.require(:option).permit(:name, :program_id, :option_type)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_option
+    @option = Option.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def option_params
+    params.require(:option).permit(:name, :program_id, :option_type)
+  end
 end

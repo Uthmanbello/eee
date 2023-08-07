@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "gradcourses/show", type: :view do
+RSpec.describe 'gradcourses/show', type: :view do
   before(:each) do
     assign(:gradcourse, Gradcourse.create!(
-      code: "Code",
-      title: "Title",
-      units: 2,
-      semester: nil,
-      gradclass: nil
-    ))
+                          code: 'Code',
+                          title: 'Title',
+                          units: 2,
+                          semester: nil,
+                          gradclass: nil
+                        ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Code/)
     expect(rendered).to match(/Title/)

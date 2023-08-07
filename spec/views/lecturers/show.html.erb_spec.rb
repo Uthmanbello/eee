@@ -1,17 +1,17 @@
 require 'rails_helper'
 
-RSpec.describe "lecturers/show", type: :view do
+RSpec.describe 'lecturers/show', type: :view do
   before(:each) do
     assign(:lecturer, Lecturer.create!(
-      name: "Name",
-      email: "Email",
-      degrees: "Degrees",
-      appointment: "Appointment",
-      doa: "Doa"
-    ))
+                        name: 'Name',
+                        email: 'Email',
+                        degrees: 'Degrees',
+                        appointment: 'Appointment',
+                        doa: 'Doa'
+                      ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Email/)

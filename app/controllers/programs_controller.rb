@@ -1,5 +1,5 @@
 class ProgramsController < ApplicationController
-  before_action :set_program, only: %i[ show edit update destroy ]
+  before_action :set_program, only: %i[show edit update destroy]
 
   # GET /programs or /programs.json
   def index
@@ -17,8 +17,7 @@ class ProgramsController < ApplicationController
   end
 
   # GET /programs/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /programs or /programs.json
   def create
@@ -26,7 +25,7 @@ class ProgramsController < ApplicationController
 
     respond_to do |format|
       if @program.save
-        format.html { redirect_to bills_admin_programs_url, notice: "Program was successfully created." }
+        format.html { redirect_to bills_admin_programs_url, notice: 'Program was successfully created.' }
         format.json { render :show, status: :created, location: @program }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +38,7 @@ class ProgramsController < ApplicationController
   def update
     respond_to do |format|
       if @program.update(program_params)
-        format.html { redirect_to bills_admin_programs_url, notice: "Program was successfully updated." }
+        format.html { redirect_to bills_admin_programs_url, notice: 'Program was successfully updated.' }
         format.json { render :show, status: :ok, location: @program }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +52,20 @@ class ProgramsController < ApplicationController
     @program.destroy
 
     respond_to do |format|
-      format.html { redirect_to bills_admin_programs_url, notice: "Program was successfully destroyed." }
+      format.html { redirect_to bills_admin_programs_url, notice: 'Program was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_program
-      @program = Program.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def program_params
-      params.require(:program).permit(:name, :image, :establish)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_program
+    @program = Program.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def program_params
+    params.require(:program).permit(:name, :image, :establish)
+  end
 end

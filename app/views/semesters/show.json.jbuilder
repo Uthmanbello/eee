@@ -1,1 +1,1 @@
-json.partial! "semesters/semester", semester: @semester
+json.partial! 'semesters/semester', semester: @semester

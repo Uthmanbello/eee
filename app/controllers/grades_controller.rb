@@ -1,5 +1,5 @@
 class GradesController < ApplicationController
-  before_action :set_grade, only: %i[ show edit update destroy ]
+  before_action :set_grade, only: %i[show edit update destroy]
 
   # GET /grades or /grades.json
   def index
@@ -7,8 +7,7 @@ class GradesController < ApplicationController
   end
 
   # GET /grades/1 or /grades/1.json
-  def show
-  end
+  def show; end
 
   # GET /grades/new
   def new
@@ -16,8 +15,7 @@ class GradesController < ApplicationController
   end
 
   # GET /grades/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /grades or /grades.json
   def create
@@ -25,7 +23,7 @@ class GradesController < ApplicationController
 
     respond_to do |format|
       if @grade.save
-        format.html { redirect_to grade_url(@grade), notice: "Grade was successfully created." }
+        format.html { redirect_to grade_url(@grade), notice: 'Grade was successfully created.' }
         format.json { render :show, status: :created, location: @grade }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +36,7 @@ class GradesController < ApplicationController
   def update
     respond_to do |format|
       if @grade.update(grade_params)
-        format.html { redirect_to grade_url(@grade), notice: "Grade was successfully updated." }
+        format.html { redirect_to grade_url(@grade), notice: 'Grade was successfully updated.' }
         format.json { render :show, status: :ok, location: @grade }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +50,20 @@ class GradesController < ApplicationController
     @grade.destroy
 
     respond_to do |format|
-      format.html { redirect_to grades_url, notice: "Grade was successfully destroyed." }
+      format.html { redirect_to grades_url, notice: 'Grade was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_grade
-      @grade = Grade.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def grade_params
-      params.require(:grade).permit(:ca1, :ca2, :exam, :total, :grade, :gradcourse_id, :gradstudent_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_grade
+    @grade = Grade.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def grade_params
+    params.require(:grade).permit(:ca1, :ca2, :exam, :total, :grade, :gradcourse_id, :gradstudent_id)
+  end
 end

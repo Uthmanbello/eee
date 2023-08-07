@@ -1,1 +1,1 @@
-json.array! @cadets, partial: "cadets/cadet", as: :cadet
+json.array! @cadets, partial: 'cadets/cadet', as: :cadet

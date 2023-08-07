@@ -1,5 +1,5 @@
 class GradcoursesController < ApplicationController
-  before_action :set_gradcourse, only: %i[ show edit update destroy ]
+  before_action :set_gradcourse, only: %i[show edit update destroy]
 
   # GET /gradcourses or /gradcourses.json
   def index
@@ -20,8 +20,7 @@ class GradcoursesController < ApplicationController
   end
 
   # GET /gradcourses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /gradcourses or /gradcourses.json
   def create
@@ -29,7 +28,7 @@ class GradcoursesController < ApplicationController
 
     respond_to do |format|
       if @gradcourse.save
-        format.html { redirect_to gradcourse_url(@gradcourse), notice: "Gradcourse was successfully created." }
+        format.html { redirect_to gradcourse_url(@gradcourse), notice: 'Gradcourse was successfully created.' }
         format.json { render :show, status: :created, location: @gradcourse }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -42,7 +41,7 @@ class GradcoursesController < ApplicationController
   def update
     respond_to do |format|
       if @gradcourse.update(gradcourse_params)
-        format.html { redirect_to gradcourse_url(@gradcourse), notice: "Gradcourse was successfully updated." }
+        format.html { redirect_to gradcourse_url(@gradcourse), notice: 'Gradcourse was successfully updated.' }
         format.json { render :show, status: :ok, location: @gradcourse }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -56,19 +55,20 @@ class GradcoursesController < ApplicationController
     @gradcourse.destroy
 
     respond_to do |format|
-      format.html { redirect_to gradcourses_url, notice: "Gradcourse was successfully destroyed." }
+      format.html { redirect_to gradcourses_url, notice: 'Gradcourse was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gradcourse
-      @gradcourse = Gradcourse.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def gradcourse_params
-      params.require(:gradcourse).permit(:code, :title, :units, :semester_id, :gradclass_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gradcourse
+    @gradcourse = Gradcourse.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def gradcourse_params
+    params.require(:gradcourse).permit(:code, :title, :units, :semester_id, :gradclass_id)
+  end
 end

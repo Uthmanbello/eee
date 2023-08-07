@@ -1,1 +1,1 @@
-json.partial! "options/option", option: @option
+json.partial! 'options/option', option: @option

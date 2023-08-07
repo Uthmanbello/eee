@@ -1,28 +1,27 @@
 require 'rails_helper'
 
-RSpec.describe "programs/edit", type: :view do
-  let(:program) {
+RSpec.describe 'programs/edit', type: :view do
+  let(:program) do
     Program.create!(
-      name: "MyString",
-      image: "MyString",
-      establish: "MyString"
+      name: 'MyString',
+      image: 'MyString',
+      establish: 'MyString'
     )
-  }
+  end
 
   before(:each) do
     assign(:program, program)
   end
 
-  it "renders the edit program form" do
+  it 'renders the edit program form' do
     render
 
-    assert_select "form[action=?][method=?]", program_path(program), "post" do
+    assert_select 'form[action=?][method=?]', program_path(program), 'post' do
+      assert_select 'input[name=?]', 'program[name]'
 
-      assert_select "input[name=?]", "program[name]"
+      assert_select 'input[name=?]', 'program[image]'
 
-      assert_select "input[name=?]", "program[image]"
-
-      assert_select "input[name=?]", "program[establish]"
+      assert_select 'input[name=?]', 'program[establish]'
     end
   end
 end

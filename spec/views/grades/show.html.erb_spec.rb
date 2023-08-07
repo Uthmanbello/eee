@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-RSpec.describe "grades/show", type: :view do
+RSpec.describe 'grades/show', type: :view do
   before(:each) do
     assign(:grade, Grade.create!(
-      ca1: 2,
-      ca2: 3,
-      exam: 4,
-      total: 5,
-      grade: "Grade",
-      gradcourse: nil,
-      gradstudent: nil
-    ))
+                     ca1: 2,
+                     ca2: 3,
+                     exam: 4,
+                     total: 5,
+                     grade: 'Grade',
+                     gradcourse: nil,
+                     gradstudent: nil
+                   ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/2/)
     expect(rendered).to match(/3/)

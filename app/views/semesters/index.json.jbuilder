@@ -1,1 +1,1 @@
-json.array! @semesters, partial: "semesters/semester", as: :semester
+json.array! @semesters, partial: 'semesters/semester', as: :semester

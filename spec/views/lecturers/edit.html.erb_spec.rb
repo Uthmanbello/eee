@@ -1,34 +1,33 @@
 require 'rails_helper'
 
-RSpec.describe "lecturers/edit", type: :view do
-  let(:lecturer) {
+RSpec.describe 'lecturers/edit', type: :view do
+  let(:lecturer) do
     Lecturer.create!(
-      name: "MyString",
-      email: "MyString",
-      degrees: "MyString",
-      appointment: "MyString",
-      doa: "MyString"
+      name: 'MyString',
+      email: 'MyString',
+      degrees: 'MyString',
+      appointment: 'MyString',
+      doa: 'MyString'
     )
-  }
+  end
 
   before(:each) do
     assign(:lecturer, lecturer)
   end
 
-  it "renders the edit lecturer form" do
+  it 'renders the edit lecturer form' do
     render
 
-    assert_select "form[action=?][method=?]", lecturer_path(lecturer), "post" do
+    assert_select 'form[action=?][method=?]', lecturer_path(lecturer), 'post' do
+      assert_select 'input[name=?]', 'lecturer[name]'
 
-      assert_select "input[name=?]", "lecturer[name]"
+      assert_select 'input[name=?]', 'lecturer[email]'
 
-      assert_select "input[name=?]", "lecturer[email]"
+      assert_select 'input[name=?]', 'lecturer[degrees]'
 
-      assert_select "input[name=?]", "lecturer[degrees]"
+      assert_select 'input[name=?]', 'lecturer[appointment]'
 
-      assert_select "input[name=?]", "lecturer[appointment]"
-
-      assert_select "input[name=?]", "lecturer[doa]"
+      assert_select 'input[name=?]', 'lecturer[doa]'
     end
   end
 end

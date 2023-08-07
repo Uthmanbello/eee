@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-RSpec.describe "cadets/show", type: :view do
+RSpec.describe 'cadets/show', type: :view do
   before(:each) do
     assign(:cadet, Cadet.create!(
-      name: "Name",
-      service: "Service",
-      num: 2,
-      gradclass: nil
-    ))
+                     name: 'Name',
+                     service: 'Service',
+                     num: 2,
+                     gradclass: nil
+                   ))
   end
 
-  it "renders attributes in <p>" do
+  it 'renders attributes in <p>' do
     render
     expect(rendered).to match(/Name/)
     expect(rendered).to match(/Service/)

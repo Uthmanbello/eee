@@ -12,94 +12,92 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/lecturers", type: :request do
-  
+RSpec.describe '/lecturers', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Lecturer. As you add validations to Lecturer, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       Lecturer.create! valid_attributes
       get lecturers_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       lecturer = Lecturer.create! valid_attributes
       get lecturer_url(lecturer)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_lecturer_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       lecturer = Lecturer.create! valid_attributes
       get edit_lecturer_url(lecturer)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Lecturer" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new Lecturer' do
+        expect do
           post lecturers_url, params: { lecturer: valid_attributes }
-        }.to change(Lecturer, :count).by(1)
+        end.to change(Lecturer, :count).by(1)
       end
 
-      it "redirects to the created lecturer" do
+      it 'redirects to the created lecturer' do
         post lecturers_url, params: { lecturer: valid_attributes }
         expect(response).to redirect_to(lecturer_url(Lecturer.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new Lecturer" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new Lecturer' do
+        expect do
           post lecturers_url, params: { lecturer: invalid_attributes }
-        }.to change(Lecturer, :count).by(0)
+        end.to change(Lecturer, :count).by(0)
       end
 
-    
+
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post lecturers_url, params: { lecturer: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested lecturer" do
+      it 'updates the requested lecturer' do
         lecturer = Lecturer.create! valid_attributes
         patch lecturer_url(lecturer), params: { lecturer: new_attributes }
         lecturer.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the lecturer" do
+      it 'redirects to the lecturer' do
         lecturer = Lecturer.create! valid_attributes
         patch lecturer_url(lecturer), params: { lecturer: new_attributes }
         lecturer.reload
@@ -107,26 +105,24 @@ RSpec.describe "/lecturers", type: :request do
       end
     end
 
-    context "with invalid parameters" do
-    
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         lecturer = Lecturer.create! valid_attributes
         patch lecturer_url(lecturer), params: { lecturer: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested lecturer" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested lecturer' do
       lecturer = Lecturer.create! valid_attributes
-      expect {
+      expect do
         delete lecturer_url(lecturer)
-      }.to change(Lecturer, :count).by(-1)
+      end.to change(Lecturer, :count).by(-1)
     end
 
-    it "redirects to the lecturers list" do
+    it 'redirects to the lecturers list' do
       lecturer = Lecturer.create! valid_attributes
       delete lecturer_url(lecturer)
       expect(response).to redirect_to(lecturers_url)

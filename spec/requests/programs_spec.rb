@@ -12,94 +12,92 @@ require 'rails_helper'
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/programs", type: :request do
-  
+RSpec.describe '/programs', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Program. As you add validations to Program, be sure to
   # adjust the attributes here as well.
-  let(:valid_attributes) {
-    skip("Add a hash of attributes valid for your model")
-  }
+  let(:valid_attributes) do
+    skip('Add a hash of attributes valid for your model')
+  end
 
-  let(:invalid_attributes) {
-    skip("Add a hash of attributes invalid for your model")
-  }
+  let(:invalid_attributes) do
+    skip('Add a hash of attributes invalid for your model')
+  end
 
-  describe "GET /index" do
-    it "renders a successful response" do
+  describe 'GET /index' do
+    it 'renders a successful response' do
       Program.create! valid_attributes
       get programs_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /show" do
-    it "renders a successful response" do
+  describe 'GET /show' do
+    it 'renders a successful response' do
       program = Program.create! valid_attributes
       get program_url(program)
       expect(response).to be_successful
     end
   end
 
-  describe "GET /new" do
-    it "renders a successful response" do
+  describe 'GET /new' do
+    it 'renders a successful response' do
       get new_program_url
       expect(response).to be_successful
     end
   end
 
-  describe "GET /edit" do
-    it "renders a successful response" do
+  describe 'GET /edit' do
+    it 'renders a successful response' do
       program = Program.create! valid_attributes
       get edit_program_url(program)
       expect(response).to be_successful
     end
   end
 
-  describe "POST /create" do
-    context "with valid parameters" do
-      it "creates a new Program" do
-        expect {
+  describe 'POST /create' do
+    context 'with valid parameters' do
+      it 'creates a new Program' do
+        expect do
           post programs_url, params: { program: valid_attributes }
-        }.to change(Program, :count).by(1)
+        end.to change(Program, :count).by(1)
       end
 
-      it "redirects to the created program" do
+      it 'redirects to the created program' do
         post programs_url, params: { program: valid_attributes }
         expect(response).to redirect_to(program_url(Program.last))
       end
     end
 
-    context "with invalid parameters" do
-      it "does not create a new Program" do
-        expect {
+    context 'with invalid parameters' do
+      it 'does not create a new Program' do
+        expect do
           post programs_url, params: { program: invalid_attributes }
-        }.to change(Program, :count).by(0)
+        end.to change(Program, :count).by(0)
       end
 
-    
+
       it "renders a response with 422 status (i.e. to display the 'new' template)" do
         post programs_url, params: { program: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "PATCH /update" do
-    context "with valid parameters" do
-      let(:new_attributes) {
-        skip("Add a hash of attributes valid for your model")
-      }
+  describe 'PATCH /update' do
+    context 'with valid parameters' do
+      let(:new_attributes) do
+        skip('Add a hash of attributes valid for your model')
+      end
 
-      it "updates the requested program" do
+      it 'updates the requested program' do
         program = Program.create! valid_attributes
         patch program_url(program), params: { program: new_attributes }
         program.reload
-        skip("Add assertions for updated state")
+        skip('Add assertions for updated state')
       end
 
-      it "redirects to the program" do
+      it 'redirects to the program' do
         program = Program.create! valid_attributes
         patch program_url(program), params: { program: new_attributes }
         program.reload
@@ -107,26 +105,24 @@ RSpec.describe "/programs", type: :request do
       end
     end
 
-    context "with invalid parameters" do
-    
+    context 'with invalid parameters' do
       it "renders a response with 422 status (i.e. to display the 'edit' template)" do
         program = Program.create! valid_attributes
         patch program_url(program), params: { program: invalid_attributes }
         expect(response).to have_http_status(:unprocessable_entity)
       end
-    
     end
   end
 
-  describe "DELETE /destroy" do
-    it "destroys the requested program" do
+  describe 'DELETE /destroy' do
+    it 'destroys the requested program' do
       program = Program.create! valid_attributes
-      expect {
+      expect do
         delete program_url(program)
-      }.to change(Program, :count).by(-1)
+      end.to change(Program, :count).by(-1)
     end
 
-    it "redirects to the programs list" do
+    it 'redirects to the programs list' do
       program = Program.create! valid_attributes
       delete program_url(program)
       expect(response).to redirect_to(programs_url)

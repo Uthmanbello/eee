@@ -1,7 +1,7 @@
 class BillsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_bill, only: %i[show edit update destroy]
-  before_action :set_bill, except: [:admin] 
+  before_action :set_bill, except: [:admin]
 
   # GET /bills or /bills.json
   def index
@@ -14,8 +14,7 @@ class BillsController < ApplicationController
     @items = Item.where(bill_id: params[:id])
   end
 
-  def admin  
-  end
+  def admin; end
 
   def lecturers
     @lecturers = Lecturer.all

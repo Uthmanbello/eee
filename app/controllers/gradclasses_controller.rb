@@ -1,5 +1,5 @@
 class GradclassesController < ApplicationController
-  before_action :set_gradclass, only: %i[ show edit update destroy ]
+  before_action :set_gradclass, only: %i[show edit update destroy]
 
   # GET /gradclasses or /gradclasses.json
   def index
@@ -17,8 +17,7 @@ class GradclassesController < ApplicationController
   end
 
   # GET /gradclasses/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /gradclasses or /gradclasses.json
   def create
@@ -26,7 +25,7 @@ class GradclassesController < ApplicationController
 
     respond_to do |format|
       if @gradclass.save
-        format.html { redirect_to gradclass_url(@gradclass), notice: "Gradclass was successfully created." }
+        format.html { redirect_to gradclass_url(@gradclass), notice: 'Gradclass was successfully created.' }
         format.json { render :show, status: :created, location: @gradclass }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +38,7 @@ class GradclassesController < ApplicationController
   def update
     respond_to do |format|
       if @gradclass.update(gradclass_params)
-        format.html { redirect_to gradclass_url(@gradclass), notice: "Gradclass was successfully updated." }
+        format.html { redirect_to gradclass_url(@gradclass), notice: 'Gradclass was successfully updated.' }
         format.json { render :show, status: :ok, location: @gradclass }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,19 +52,20 @@ class GradclassesController < ApplicationController
     @gradclass.destroy
 
     respond_to do |format|
-      format.html { redirect_to gradclasses_url, notice: "Gradclass was successfully destroyed." }
+      format.html { redirect_to gradclasses_url, notice: 'Gradclass was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_gradclass
-      @gradclass = Gradclass.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def gradclass_params
-      params.require(:gradclass).permit(:name, :rc, :semester_id)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_gradclass
+    @gradclass = Gradclass.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def gradclass_params
+    params.require(:gradclass).permit(:name, :rc, :semester_id)
+  end
 end
